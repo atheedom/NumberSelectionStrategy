@@ -26,11 +26,11 @@ Example:
 
 Example: total numbers 10000, starting at 1000 with a block size of 1000.
 
-  block 1: 1000 - 1999
-  block 2: 2000 - 2999
-  block 3: 3000 - 3999
-  block 4: 4000 - 4999
-  ... 
+* block 1: 1000 - 1999
+* block 2: 2000 - 2999
+* block 3: 3000 - 3999
+* block 4: 4000 - 4999
+* ...
 
 Note: the last block should end 10,000 not 9999.
 
