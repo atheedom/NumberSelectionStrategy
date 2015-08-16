@@ -33,7 +33,7 @@ public class TicketNumberGeneration {
         config.setNextNumber(1000);
 
         // act
-        List<Integer> generatedTicketNumbers = NumberStrategy.SEQUENTIAL.getStrategy().execute(config);
+        List<Integer> generatedTicketNumbers = NumberStrategy.ORDERED.getStrategy().execute(config);
 
         // assert
         assertThat(generatedTicketNumbers.size()).isEqualTo(2);
@@ -52,7 +52,7 @@ public class TicketNumberGeneration {
         config.setNextNumber(1248);
 
         // act
-        List<Integer> generatedTicketNumbers = NumberStrategy.SEQUENTIAL.getStrategy().execute(config);
+        List<Integer> generatedTicketNumbers = NumberStrategy.ORDERED.getStrategy().execute(config);
 
         // assert
         assertThat(generatedTicketNumbers.size()).isEqualTo(2);
@@ -61,7 +61,7 @@ public class TicketNumberGeneration {
     }
 
     @Test
-    public void shouldGenerateTwoNumbersWithChunkStrategy() {
+    public void shouldGenerateTwoNumbersWithBlockStrategy() {
 
         // arrange
         Config config = new Config();
@@ -70,17 +70,17 @@ public class TicketNumberGeneration {
         config.setNumberPerSelection(2);
         config.setBlockSize(1_000);
 
-        Utils.makeChunks(config);
+        Utils.generateBlocks(config);
 
         // act
-        List<Integer> generatedTicketNumbers = NumberStrategy.CHUNK.getStrategy().execute(config);
+        List<Integer> generatedTicketNumbers = NumberStrategy.INTERLACED.getStrategy().execute(config);
 
         // assert
         assertThat(generatedTicketNumbers.size()).isEqualTo(2);
     }
 
     @Test
-    public void shouldGenerateTwoNumbersAtLeastChunkSizeApartWithChunkStrategy() {
+    public void shouldGenerateTwoNumbersAtLeastBlockSizeApartWithBlockStrategy() {
 
         // arrange
         Config config = new Config();
@@ -89,10 +89,10 @@ public class TicketNumberGeneration {
         config.setNumberPerSelection(2);
         config.setBlockSize(1_000);
 
-        Utils.makeChunks(config);
+        Utils.generateBlocks(config);
 
         // act
-        List<Integer> generatedTicketNumbers = NumberStrategy.CHUNK.getStrategy().execute(config);
+        List<Integer> generatedTicketNumbers = NumberStrategy.INTERLACED.getStrategy().execute(config);
 
         // assert
         Integer number1 = generatedTicketNumbers.get(0);
@@ -102,7 +102,7 @@ public class TicketNumberGeneration {
     }
 
     @Test
-    public void shouldGenerateTheTwoNumbersGivenWithChunkStrategy() {
+    public void shouldGenerateTheTwoNumbersGivenWithBlockStrategy() {
 
         // arrange
         Config config = new Config();
@@ -111,10 +111,10 @@ public class TicketNumberGeneration {
         config.setNumberPerSelection(2);
         config.setBlockSize(1_000);
 
-        Utils.makeChunks(config);
+        Utils.generateBlocks(config);
 
         // act
-        List<Integer> generatedTicketNumbers = NumberStrategy.CHUNK.getStrategy().execute(config);
+        List<Integer> generatedTicketNumbers = NumberStrategy.INTERLACED.getStrategy().execute(config);
 
         // assert
         assertThat(generatedTicketNumbers.get(0)).isEqualTo(1000);

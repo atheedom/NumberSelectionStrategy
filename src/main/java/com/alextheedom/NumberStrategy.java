@@ -1,12 +1,10 @@
 package com.alextheedom;
 
-/**
- * Created by atheedom on 24/07/15.
- */
+
 public enum NumberStrategy {
 
-    SEQUENTIAL(new SequentialStrategy()),
-    CHUNK(new ChunkStrategy());
+    ORDERED(new OrderedStrategy()),
+    INTERLACED(new InterlacedStrategy());
 
     private Strategy<Integer> strategy;
 

@@ -4,7 +4,7 @@ package com.alextheedom;
 /**
  * Created by atheedom on 27/07/15.
  */
-public class Chunk implements Comparable<Chunk> {
+public class Block implements Comparable<Block> {
 
     public enum Status {
         LIVE,
@@ -13,27 +13,23 @@ public class Chunk implements Comparable<Chunk> {
     }
 
     private Integer idx;
-    private Integer startOfChunk;
-    private Integer endOfChunk;
+    private Integer startOfBlock;
+    private Integer endOfBlock;
     private Integer previousNumber;
     private Status status;
 
-    public Chunk(){
+    public Block(){}
 
-    }
-
-    public Chunk(Integer idx, Integer startOfChunk, Integer endOfChunk, Integer previousNumber, Status status ) {
+    public Block(Integer idx, Integer startOfBlock, Integer endOfBlock, Integer previousNumber, Status status) {
         this.idx = idx;
-        this.startOfChunk = startOfChunk;
-        this.endOfChunk = endOfChunk;
+        this.startOfBlock = startOfBlock;
+        this.endOfBlock = endOfBlock;
         this.previousNumber = previousNumber;
         this.status = status;
-
     }
 
-
-    public int compareTo(Chunk chunk) {
-        return this.getIdx().compareTo(chunk.getIdx());
+    public int compareTo(Block block) {
+        return this.getIdx().compareTo(block.getIdx());
     }
 
     public Status getStatus() {
@@ -60,21 +56,20 @@ public class Chunk implements Comparable<Chunk> {
         this.idx = idx;
     }
 
-    public Integer getStartOfChunk() {
-        return startOfChunk;
+    public Integer getStartOfBlock() {
+        return startOfBlock;
     }
 
-    public void setStartOfChunk(Integer startOfChunk) {
-        this.startOfChunk = startOfChunk;
+    public void setStartOfBlock(Integer startOfBlock) {
+        this.startOfBlock = startOfBlock;
     }
 
-    public Integer getEndOfChunk() {
-        return endOfChunk;
+    public Integer getEndOfBlock() {
+        return endOfBlock;
     }
 
-    public void setEndOfChunk(Integer endOfChunk) {
-        this.endOfChunk = endOfChunk;
+    public void setEndOfBlock(Integer endOfBlock) {
+        this.endOfBlock = endOfBlock;
     }
-
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by atheedom on 24/07/15.
  */
-public class SequentialStrategy implements Strategy<Integer> {
+public class OrderedStrategy implements Strategy<Integer> {
 
 
     @Override
