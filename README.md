@@ -10,7 +10,7 @@ Strategy one: Ordered
 Numbers are selected sequentially.
 
 Strategy two: Interlaced
-Numbers are selected from interlaced groups of numbers so that no two numbers are sequentail and sufficently apart to appear randomly selected. No number can be selected more than once.
+Numbers are selected from interlaced groups of numbers so that no two numbers are sequential and sufficiently apart to appear randomly selected. No number can be selected more than once.
 
 # Solution
 
