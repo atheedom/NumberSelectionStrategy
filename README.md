@@ -22,6 +22,7 @@ The last number selected is persisted in the database and the next two numbers a
 Strategy two: Interlaced
 Blocks of numbers are generated based on a block size and a minimum and maximum number. Numbers are selected from the begining of one block and the end of the other in ascending and descending order respectively. 
 
+
 Example:
 
 Example: total numbers 10000, starting at 1000 with a block size of 1000.
